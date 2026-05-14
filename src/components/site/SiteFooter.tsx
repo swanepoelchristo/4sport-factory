@@ -22,7 +22,13 @@ export function SiteFooter() {
           </nav>
         </div>
         <div className="mt-10 pt-6 border-t border-border/60 flex flex-col sm:flex-row justify-between gap-3 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} 4SPORT. All rights reserved.</p>
+          <p>
+            © 2026 4SPORT. All rights reserved.
+            <span className="mx-2 text-border">·</span>
+            <span className="text-muted-foreground/80">
+              Created by <span className="text-foreground/90 font-medium">Milk Box AI</span>
+            </span>
+          </p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-foreground">Privacy</a>
             <a href="#" className="hover:text-foreground">Terms</a>

@@ -24,6 +24,10 @@ export const Route = createFileRoute("/coaches")({
         primaryCta: "Get started as a coach",
         secondaryCta: "See coach features",
         watermark,
+        video: {
+          heading: "See the coach flow in action",
+          description: "A short walkthrough will show how coaches build squads, manage fixtures, send updates, and track match-day work.",
+        },
         pains: [
           { icon: MessageSquare, title: "Lost in group chats", body: "Updates buried in noise. No one knows the latest plan." },
           { icon: ClipboardList, title: "Manual squad lists", body: "Copy-pasting names every week instead of coaching." },

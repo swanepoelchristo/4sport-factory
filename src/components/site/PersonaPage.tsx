@@ -1,5 +1,6 @@
 import { ArrowRight, Check, type LucideIcon } from "lucide-react";
 import { Logo } from "./Logo";
+import { PersonaVideoSection, type PersonaVideo } from "./PersonaVideoSection";
 
 export type PersonaConfig = {
   persona: string;
@@ -12,6 +13,7 @@ export type PersonaConfig = {
   pains: { icon: LucideIcon; title: string; body: string }[];
   steps: { title: string; body: string }[];
   features: { icon: LucideIcon; title: string; body: string }[];
+  video?: PersonaVideo & { heading?: string; description?: string };
 };
 
 export function PersonaPage({ config }: { config: PersonaConfig }) {
@@ -110,6 +112,14 @@ export function PersonaPage({ config }: { config: PersonaConfig }) {
           </div>
         </div>
       </section>
+
+      {/* VIDEO */}
+      <PersonaVideoSection
+        persona={config.persona}
+        heading={config.video?.heading}
+        description={config.video?.description}
+        video={config.video}
+      />
 
       {/* FEATURES */}
       <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">

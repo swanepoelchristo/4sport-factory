@@ -24,6 +24,10 @@ export const Route = createFileRoute("/guardians")({
         primaryCta: "Connect to your child's team",
         secondaryCta: "What guardians get",
         watermark,
+        video: {
+          heading: "See the guardian flow in action",
+          description: "A short walkthrough will show how guardians follow fixtures, updates, travel details, and child-related information.",
+        },
         pains: [
           { icon: Bell, title: "Late notifications", body: "Last-minute changes you only hear about from another parent." },
           { icon: Calendar, title: "Where, when, what?", body: "No more digging through emails to find Saturday's kickoff." },

@@ -24,6 +24,10 @@ export const Route = createFileRoute("/schools")({
         primaryCta: "Book a school demo",
         secondaryCta: "See how it works",
         watermark,
+        video: {
+          heading: "See the school flow in action",
+          description: "A short walkthrough will show how schools manage teams, fixtures, venues, and communication.",
+        },
         pains: [
           { icon: Calendar, title: "Fixtures everywhere", body: "One calendar across sports, age groups and venues. No more clashes." },
           { icon: MapPin, title: "Venue chaos", body: "Bookings, capacity and travel logistics handled in a few taps." },

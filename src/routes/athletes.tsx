@@ -24,6 +24,10 @@ export const Route = createFileRoute("/athletes")({
         primaryCta: "Join 4SPORT",
         secondaryCta: "See athlete features",
         watermark,
+        video: {
+          heading: "See the athlete flow in action",
+          description: "A short walkthrough will show how athletes track fixtures, documents, points, updates, and team communication.",
+        },
         pains: [
           { icon: Calendar, title: "Where am I playing?", body: "No more digging through messages to find your next match." },
           { icon: Bell, title: "Surprise changes", body: "Get notified the moment a fixture, time or venue changes." },

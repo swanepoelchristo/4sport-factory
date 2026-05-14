@@ -38,7 +38,7 @@ export function PersonaPage({ config }: { config: PersonaConfig }) {
             </div>
 
             <div className="mb-6 flex items-center gap-3">
-              <Logo className="scale-110 origin-left" />
+              <Logo className="h-12 w-auto sm:h-14" />
               <span className="text-muted-foreground text-sm">for {config.persona}</span>
             </div>
 

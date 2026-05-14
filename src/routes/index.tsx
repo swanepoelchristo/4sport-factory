@@ -36,8 +36,10 @@ function Index() {
             <span className="h-1.5 w-1.5 rounded-full bg-brand shadow-glow" />
             One ecosystem. Five roles. Real sport.
           </div>
-          <div className="flex justify-center mb-6">
-            <Logo className="scale-150" />
+          <div className="flex justify-center mb-10">
+            <div className="rounded-2xl bg-white shadow-glow ring-1 ring-brand/30 p-5 sm:p-7">
+              <Logo variant="card" className="h-24 sm:h-32 w-auto" />
+            </div>
           </div>
           <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-8xl text-foreground leading-[0.95] tracking-tight max-w-5xl mx-auto">
             School sport, finally <span className="text-gradient-brand">connected.</span>

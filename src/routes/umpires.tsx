@@ -24,6 +24,10 @@ export const Route = createFileRoute("/umpires")({
         primaryCta: "Sign up as an umpire",
         secondaryCta: "How it works",
         watermark,
+        video: {
+          heading: "See the umpire flow in action",
+          description: "A short walkthrough will show how umpires manage availability, accept matches, and track bookings.",
+        },
         pains: [
           { icon: Bell, title: "Last-minute calls", body: "No more 9pm phone calls trying to fill a Saturday morning slot." },
           { icon: Calendar, title: "Calendar conflicts", body: "Set when you're available — and only get matches that fit." },

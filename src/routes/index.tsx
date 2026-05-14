@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, GraduationCap, Whistle, Trophy, Flag, Users } from "lucide-react";
+import { ArrowRight, GraduationCap, ClipboardList, Trophy, Flag, Users } from "lucide-react";
 import { Logo } from "@/components/site/Logo";
 import schoolImg from "@/assets/watermark-school.jpg";
 import coachImg from "@/assets/watermark-coach.jpg";
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
 
 const personas = [
   { to: "/schools" as const, label: "School", icon: GraduationCap, image: schoolImg, blurb: "Run fixtures, venues, teams and reporting from one command center." },
-  { to: "/coaches" as const, label: "Coach", icon: Whistle, image: coachImg, blurb: "Plan sessions, track squads and message players in seconds." },
+  { to: "/coaches" as const, label: "Coach", icon: ClipboardList, image: coachImg, blurb: "Plan sessions, track squads and message players in seconds." },
   { to: "/athletes" as const, label: "Athlete", icon: Trophy, image: athleteImg, blurb: "Your fixtures, your stats, your team — all in your pocket." },
   { to: "/umpires" as const, label: "Umpire", icon: Flag, image: umpireImg, blurb: "Accept matches, get paid, manage your availability with zero admin." },
   { to: "/guardians" as const, label: "Guardian", icon: Users, image: guardianImg, blurb: "Know what's on, where it is and how it ended — without chasing." },

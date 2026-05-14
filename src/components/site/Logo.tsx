@@ -1,15 +1,22 @@
-export function Logo({ className = "" }: { className?: string }) {
+import logoMark from "@/assets/4sport-logo-mark.png";
+import logoCard from "@/assets/4sport-logo.png";
+
+type LogoProps = {
+  className?: string;
+  /** "mark" = transparent for dark backgrounds (nav/footer). "card" = full white official lockup for hero. */
+  variant?: "mark" | "card";
+};
+
+export function Logo({ className = "", variant = "mark" }: LogoProps) {
+  const src = variant === "card" ? logoCard : logoMark;
   return (
-    <div className={`inline-flex items-center gap-2 ${className}`}>
-      <div className="relative">
-        <div className="absolute inset-0 rounded-lg bg-brand/40 blur-md" aria-hidden />
-        <div className="relative h-8 w-8 rounded-lg bg-gradient-brand flex items-center justify-center">
-          <span className="text-brand-foreground font-display font-black text-sm">4</span>
-        </div>
-      </div>
-      <span className="font-display font-black tracking-tight text-foreground text-xl">
-        4SPORT
-      </span>
-    </div>
+    <img
+      src={src}
+      alt="4SPORT — eyes on the game"
+      width={790}
+      height={415}
+      className={className}
+      draggable={false}
+    />
   );
 }

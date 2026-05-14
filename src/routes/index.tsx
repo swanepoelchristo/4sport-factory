@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, GraduationCap, ClipboardList, Trophy, Flag, Users } from "lucide-react";
 import { Logo } from "@/components/site/Logo";
-import schoolImg from "@/assets/watermark-school.jpg";
-import coachImg from "@/assets/watermark-coach.jpg";
-import athleteImg from "@/assets/watermark-athlete.jpg";
-import umpireImg from "@/assets/watermark-umpire.jpg";
-import guardianImg from "@/assets/watermark-guardian.jpg";
+import schoolImg from "@/assets/persona-schools.jpg";
+import coachImg from "@/assets/persona-coaches.jpg";
+import athleteImg from "@/assets/persona-athletes.jpg";
+import umpireImg from "@/assets/persona-umpires.jpg";
+import guardianImg from "@/assets/persona-guardians.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({

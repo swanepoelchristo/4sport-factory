@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Calendar, MapPin, Bell, Heart, MessageSquare, Trophy, Shield, Users } from "lucide-react";
 import { PersonaPage } from "@/components/site/PersonaPage";
-import watermark from "@/assets/watermark-guardian.jpg";
+import watermark from "@/assets/persona-guardians.jpg";
 
 export const Route = createFileRoute("/guardians")({
   head: () => ({

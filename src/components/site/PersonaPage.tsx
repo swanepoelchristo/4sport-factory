@@ -1,6 +1,8 @@
 import { ArrowRight, Check, type LucideIcon } from "lucide-react";
 import { Logo } from "./Logo";
 import { PersonaVideoSection, type PersonaVideo } from "./PersonaVideoSection";
+import { ContactStrip } from "./ContactStrip";
+import { buildMailto, ctaKind } from "@/lib/mailto";
 
 export type PersonaConfig = {
   persona: string;
@@ -17,6 +19,7 @@ export type PersonaConfig = {
 };
 
 export function PersonaPage({ config }: { config: PersonaConfig }) {
+  const primaryHref = buildMailto(ctaKind(config.primaryCta), config.persona);
   return (
     <main className="relative">
       {/* HERO */}
@@ -54,7 +57,7 @@ export function PersonaPage({ config }: { config: PersonaConfig }) {
 
             <div className="mt-10 flex flex-wrap gap-3">
               <a
-                href="#get-started"
+                href={primaryHref}
                 className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand text-brand-foreground px-6 py-3.5 text-sm font-semibold shadow-glow hover:opacity-90 transition"
               >
                 {config.primaryCta}
@@ -158,16 +161,18 @@ export function PersonaPage({ config }: { config: PersonaConfig }) {
               Join the 4SPORT ecosystem and connect every part of your sporting program.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <a href="#" className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand text-brand-foreground px-6 py-3.5 text-sm font-semibold shadow-glow hover:opacity-90 transition">
+              <a href={primaryHref} className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand text-brand-foreground px-6 py-3.5 text-sm font-semibold shadow-glow hover:opacity-90 transition">
                 {config.primaryCta} <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#" className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-white/10 transition">
+              <a href={buildMailto("support", config.persona)} className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-white/10 transition">
                 <Check className="h-4 w-4" /> Talk to us
               </a>
             </div>
           </div>
         </div>
       </section>
+
+      <ContactStrip persona={config.persona} />
     </main>
   );
 }

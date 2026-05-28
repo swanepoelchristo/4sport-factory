@@ -1,7 +1,7 @@
 export type ContactKind = "demo" | "sales" | "support";
 
 const RECIPIENTS: Record<ContactKind, string> = {
-  demo: "admin@4sport.co.za",
+  demo: "info@4sport.co.za",
   sales: "sales@4sport.co.za",
   support: "support@4sport.co.za",
 };

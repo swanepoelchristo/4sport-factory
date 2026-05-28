@@ -1,4 +1,4 @@
-import { ArrowRight, Check, type LucideIcon } from "lucide-react";
+import { ArrowRight, Check, Eye, ShieldCheck, type LucideIcon } from "lucide-react";
 import { Logo } from "./Logo";
 import { PersonaVideoSection, type PersonaVideo } from "./PersonaVideoSection";
 import { ContactStrip } from "./ContactStrip";
@@ -15,6 +15,8 @@ export type PersonaConfig = {
   pains: { icon: LucideIcon; title: string; body: string }[];
   steps: { title: string; body: string }[];
   features: { icon: LucideIcon; title: string; body: string }[];
+  pillars?: { icon: LucideIcon; title: string; body: string }[];
+  focusLine?: string;
   video?: PersonaVideo & { heading?: string; description?: string };
 };
 
@@ -115,6 +117,37 @@ export function PersonaPage({ config }: { config: PersonaConfig }) {
           </div>
         </div>
       </section>
+
+      {/* TRACKABILITY & SAFETY */}
+      {config.pillars && config.pillars.length > 0 && (
+        <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-2xl mb-10">
+            <p className="text-brand text-sm font-semibold uppercase tracking-wider mb-3 inline-flex items-center gap-2">
+              <Eye className="h-4 w-4" /> Eyes on the game
+            </p>
+            <h2 className="text-4xl sm:text-5xl font-display font-bold text-foreground">
+              Trackability, safety and visibility — built in.
+            </h2>
+            <p className="mt-4 text-muted-foreground text-lg">
+              {config.focusLine ?? `So ${config.persona.toLowerCase()} can focus on sport, not admin.`}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {config.pillars.map((p) => (
+              <div key={p.title} className="rounded-2xl glass p-6 hover:border-brand/40 transition-colors">
+                <div className="h-11 w-11 rounded-xl bg-brand/15 text-brand flex items-center justify-center mb-4">
+                  <p.icon className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs font-semibold text-brand">
+            <ShieldCheck className="h-4 w-4" /> Focus on sport. Not admin.
+          </div>
+        </section>
+      )}
 
       {/* VIDEO */}
       <PersonaVideoSection

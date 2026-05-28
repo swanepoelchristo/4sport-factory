@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Trophy, Calendar, Users, BarChart3, Bell, MapPin, Heart, Zap } from "lucide-react";
+import { Trophy, Calendar, Users, BarChart3, Bell, MapPin, Heart, Zap, Eye, ShieldCheck, ClipboardCheck } from "lucide-react";
 import { PersonaPage } from "@/components/site/PersonaPage";
 import watermark from "@/assets/persona-athletes.jpg";
 
@@ -24,10 +24,16 @@ export const Route = createFileRoute("/athletes")({
         primaryCta: "Join 4SPORT",
         secondaryCta: "See athlete features",
         watermark,
+        focusLine: "Know what's on, where to be and how you're tracking. Spend the energy on training and the game — not on chasing details.",
         video: {
           heading: "See the athlete flow in action",
           description: "A short walkthrough will show how athletes track fixtures, documents, points, updates, and team communication.",
         },
+        pillars: [
+          { icon: Eye, title: "Always know what's on", body: "Fixtures, training and changes pushed to you the moment they happen." },
+          { icon: ShieldCheck, title: "Safe and verified", body: "Your coach, your school and your team — all verified roles, not random chats." },
+          { icon: ClipboardCheck, title: "Your record, tracked", body: "Participation, attendance and milestones logged for you across the season." },
+        ],
         pains: [
           { icon: Calendar, title: "Where am I playing?", body: "No more digging through messages to find your next match." },
           { icon: Bell, title: "Surprise changes", body: "Get notified the moment a fixture, time or venue changes." },

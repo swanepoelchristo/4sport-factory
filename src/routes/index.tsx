@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, GraduationCap, ClipboardList, Trophy, Flag, Users } from "lucide-react";
+import { ArrowRight, GraduationCap, ClipboardList, Trophy, Flag, Users, Shield } from "lucide-react";
 import { Logo } from "@/components/site/Logo";
+import { buildMailto } from "@/lib/mailto";
 import schoolImg from "@/assets/persona-schools.jpg";
 import coachImg from "@/assets/persona-coaches.jpg";
+import clubImg from "@/assets/persona-clubs.jpg";
 import athleteImg from "@/assets/persona-athletes.jpg";
 import umpireImg from "@/assets/persona-umpires.jpg";
 import guardianImg from "@/assets/persona-guardians.jpg";
@@ -10,8 +12,10 @@ import guardianImg from "@/assets/persona-guardians.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "4SPORT — One ecosystem for school sport" },
-      { name: "description", content: "Choose your path: 4SPORT for Schools, Coaches, Athletes, Umpires and Guardians." },
+      { title: "4SPORT — Eyes on the game" },
+      { name: "description", content: "One platform for schools, coaches, clubs, athletes, umpires and guardians. Trackability, safety and visibility — so everyone can focus on sport, not admin." },
+      { property: "og:title", content: "4SPORT — Eyes on the game" },
+      { property: "og:description", content: "Trackability, safety and visibility for school and club sport." },
     ],
   }),
   component: Index,
@@ -20,6 +24,7 @@ export const Route = createFileRoute("/")({
 const personas = [
   { to: "/schools" as const, label: "School", icon: GraduationCap, image: schoolImg, blurb: "Run fixtures, venues, teams and reporting from one command center." },
   { to: "/coaches" as const, label: "Coach", icon: ClipboardList, image: coachImg, blurb: "Plan sessions, track squads and message players in seconds." },
+  { to: "/clubs" as const, label: "Club", icon: Shield, image: clubImg, blurb: "Coordinate teams, fixtures, officials and members across your whole club." },
   { to: "/athletes" as const, label: "Athlete", icon: Trophy, image: athleteImg, blurb: "Your fixtures, your stats, your team — all in your pocket." },
   { to: "/umpires" as const, label: "Umpire", icon: Flag, image: umpireImg, blurb: "Accept matches, get paid, manage your availability with zero admin." },
   { to: "/guardians" as const, label: "Guardian", icon: Users, image: guardianImg, blurb: "Know what's on, where it is and how it ended — without chasing." },
@@ -34,7 +39,7 @@ function Index() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-16 lg:pt-32 text-center">
           <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs font-medium text-brand mb-8">
             <span className="h-1.5 w-1.5 rounded-full bg-brand shadow-glow" />
-            One ecosystem. Five roles. Real sport.
+            Eyes on the game.
           </div>
           <div className="flex justify-center mb-10">
             <div className="rounded-2xl bg-white shadow-glow ring-1 ring-brand/30 p-5 sm:p-7">
@@ -42,12 +47,26 @@ function Index() {
             </div>
           </div>
           <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-8xl text-foreground leading-[0.95] tracking-tight max-w-5xl mx-auto">
-            School sport, finally <span className="text-gradient-brand">connected.</span>
+            Focus on sport. <span className="text-gradient-brand">Not admin.</span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Fixtures, bookings, coaching, officiating, and family updates — running on the same
-            platform. Choose your role and step in.
+            4SPORT brings schools, coaches, clubs, athletes, umpires and guardians onto one platform —
+            with the trackability, safety and visibility that real sport needs.
           </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <a
+              href={buildMailto("demo", "General")}
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand text-brand-foreground px-6 py-3.5 text-sm font-semibold shadow-glow hover:opacity-90 transition"
+            >
+              Book a demo <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href={buildMailto("sales", "General")}
+              className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-white/10 transition"
+            >
+              Talk to sales
+            </a>
+          </div>
         </div>
       </section>
 

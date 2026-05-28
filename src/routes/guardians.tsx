@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Calendar, MapPin, Bell, Heart, MessageSquare, Trophy, Shield, Users } from "lucide-react";
+import { Calendar, MapPin, Bell, Heart, MessageSquare, Trophy, Shield, Users, Eye, ShieldCheck, ClipboardCheck } from "lucide-react";
 import { PersonaPage } from "@/components/site/PersonaPage";
 import watermark from "@/assets/persona-guardians.jpg";
 
@@ -24,10 +24,16 @@ export const Route = createFileRoute("/guardians")({
         primaryCta: "Connect to your child's team",
         secondaryCta: "What guardians get",
         watermark,
+        focusLine: "Know your child is safe, where they need to be and how their sport is going — without chasing anyone.",
         video: {
           heading: "See the guardian flow in action",
           description: "A short walkthrough will show how guardians follow fixtures, updates, travel details, and child-related information.",
         },
+        pillars: [
+          { icon: Eye, title: "Always informed", body: "Fixtures, venues, changes and results delivered to you — not buried in a group chat." },
+          { icon: ShieldCheck, title: "Safety first", body: "Verified coaches, verified schools and protected info about your child." },
+          { icon: ClipboardCheck, title: "Tracked & on record", body: "Consents, attendance and milestones recorded properly across the season." },
+        ],
         pains: [
           { icon: Bell, title: "Late notifications", body: "Last-minute changes you only hear about from another parent." },
           { icon: Calendar, title: "Where, when, what?", body: "No more digging through emails to find Saturday's kickoff." },

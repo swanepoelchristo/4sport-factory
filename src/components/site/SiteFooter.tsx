@@ -16,6 +16,7 @@ export function SiteFooter() {
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
             <Link to="/schools" className="text-muted-foreground hover:text-foreground">Schools</Link>
             <Link to="/coaches" className="text-muted-foreground hover:text-foreground">Coaches</Link>
+            <Link to="/clubs" className="text-muted-foreground hover:text-foreground">Clubs</Link>
             <Link to="/athletes" className="text-muted-foreground hover:text-foreground">Athletes</Link>
             <Link to="/umpires" className="text-muted-foreground hover:text-foreground">Umpires</Link>
             <Link to="/guardians" className="text-muted-foreground hover:text-foreground">Guardians</Link>

@@ -2,10 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
+import { buildMailto } from "@/lib/mailto";
 
 const links = [
   { to: "/schools", label: "Schools" },
   { to: "/coaches", label: "Coaches" },
+  { to: "/clubs", label: "Clubs" },
   { to: "/athletes", label: "Athletes" },
   { to: "/umpires", label: "Umpires" },
   { to: "/guardians", label: "Guardians" },
@@ -37,13 +39,13 @@ export function SiteNav() {
 
           <div className="hidden lg:flex items-center gap-2">
             <a
-              href="#login"
+              href={buildMailto("demo", "General")}
               className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Log in
+              Book demo
             </a>
             <a
-              href="#get-started"
+              href={buildMailto("sales", "General")}
               className="px-4 py-2 rounded-lg bg-gradient-brand text-brand-foreground text-sm font-semibold shadow-glow hover:opacity-90 transition-opacity"
             >
               Get started
@@ -73,8 +75,8 @@ export function SiteNav() {
               </Link>
             ))}
             <div className="pt-2 flex gap-2">
-              <a href="#login" className="flex-1 text-center px-4 py-2 rounded-lg border border-border text-sm font-medium">Log in</a>
-              <a href="#get-started" className="flex-1 text-center px-4 py-2 rounded-lg bg-gradient-brand text-brand-foreground text-sm font-semibold">Get started</a>
+              <a href={buildMailto("demo", "General")} className="flex-1 text-center px-4 py-2 rounded-lg border border-border text-sm font-medium">Book demo</a>
+              <a href={buildMailto("sales", "General")} className="flex-1 text-center px-4 py-2 rounded-lg bg-gradient-brand text-brand-foreground text-sm font-semibold">Get started</a>
             </div>
           </div>
         )}

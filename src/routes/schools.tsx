@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Calendar, MapPin, Users, BarChart3, Shield, Bell, FileSpreadsheet, Zap } from "lucide-react";
+import { Calendar, MapPin, Users, BarChart3, Shield, Bell, FileSpreadsheet, Zap, Eye, ShieldCheck, ClipboardCheck } from "lucide-react";
 import { PersonaPage } from "@/components/site/PersonaPage";
 import watermark from "@/assets/persona-schools.jpg";
 
@@ -24,10 +24,16 @@ export const Route = createFileRoute("/schools")({
         primaryCta: "Book a school demo",
         secondaryCta: "See how it works",
         watermark,
+        focusLine: "Full visibility across every team, every fixture and every official — so your sports staff can focus on sport, not admin.",
         video: {
           heading: "See the school flow in action",
           description: "A short walkthrough will show how schools manage teams, fixtures, venues, and communication.",
         },
+        pillars: [
+          { icon: Eye, title: "Whole-program visibility", body: "One live view of every team, fixture, venue and official across the school." },
+          { icon: ShieldCheck, title: "Safety & accountability", body: "Verified roles, accredited officials, and a proper audit trail for every change." },
+          { icon: ClipboardCheck, title: "Tracked end-to-end", body: "Attendance, comms, results and reporting captured automatically across the season." },
+        ],
         pains: [
           { icon: Calendar, title: "Fixtures everywhere", body: "One calendar across sports, age groups and venues. No more clashes." },
           { icon: MapPin, title: "Venue chaos", body: "Bookings, capacity and travel logistics handled in a few taps." },

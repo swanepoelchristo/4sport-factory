@@ -10,10 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UmpiresRouteImport } from './routes/umpires'
+import { Route as SwimmingRouteImport } from './routes/swimming'
+import { Route as SportsRouteImport } from './routes/sports'
 import { Route as SchoolsRouteImport } from './routes/schools'
+import { Route as RugbyRouteImport } from './routes/rugby'
+import { Route as NetballRouteImport } from './routes/netball'
+import { Route as HockeyRouteImport } from './routes/hockey'
 import { Route as GuardiansRouteImport } from './routes/guardians'
+import { Route as CricketRouteImport } from './routes/cricket'
 import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as ClubsRouteImport } from './routes/clubs'
+import { Route as AthleticsRouteImport } from './routes/athletics'
 import { Route as AthletesRouteImport } from './routes/athletes'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,14 +29,44 @@ const UmpiresRoute = UmpiresRouteImport.update({
   path: '/umpires',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SwimmingRoute = SwimmingRouteImport.update({
+  id: '/swimming',
+  path: '/swimming',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SportsRoute = SportsRouteImport.update({
+  id: '/sports',
+  path: '/sports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SchoolsRoute = SchoolsRouteImport.update({
   id: '/schools',
   path: '/schools',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RugbyRoute = RugbyRouteImport.update({
+  id: '/rugby',
+  path: '/rugby',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetballRoute = NetballRouteImport.update({
+  id: '/netball',
+  path: '/netball',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HockeyRoute = HockeyRouteImport.update({
+  id: '/hockey',
+  path: '/hockey',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GuardiansRoute = GuardiansRouteImport.update({
   id: '/guardians',
   path: '/guardians',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CricketRoute = CricketRouteImport.update({
+  id: '/cricket',
+  path: '/cricket',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoachesRoute = CoachesRouteImport.update({
@@ -40,6 +77,11 @@ const CoachesRoute = CoachesRouteImport.update({
 const ClubsRoute = ClubsRouteImport.update({
   id: '/clubs',
   path: '/clubs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AthleticsRoute = AthleticsRouteImport.update({
+  id: '/athletics',
+  path: '/athletics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AthletesRoute = AthletesRouteImport.update({
@@ -56,29 +98,50 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/athletes': typeof AthletesRoute
+  '/athletics': typeof AthleticsRoute
   '/clubs': typeof ClubsRoute
   '/coaches': typeof CoachesRoute
+  '/cricket': typeof CricketRoute
   '/guardians': typeof GuardiansRoute
+  '/hockey': typeof HockeyRoute
+  '/netball': typeof NetballRoute
+  '/rugby': typeof RugbyRoute
   '/schools': typeof SchoolsRoute
+  '/sports': typeof SportsRoute
+  '/swimming': typeof SwimmingRoute
   '/umpires': typeof UmpiresRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/athletes': typeof AthletesRoute
+  '/athletics': typeof AthleticsRoute
   '/clubs': typeof ClubsRoute
   '/coaches': typeof CoachesRoute
+  '/cricket': typeof CricketRoute
   '/guardians': typeof GuardiansRoute
+  '/hockey': typeof HockeyRoute
+  '/netball': typeof NetballRoute
+  '/rugby': typeof RugbyRoute
   '/schools': typeof SchoolsRoute
+  '/sports': typeof SportsRoute
+  '/swimming': typeof SwimmingRoute
   '/umpires': typeof UmpiresRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/athletes': typeof AthletesRoute
+  '/athletics': typeof AthleticsRoute
   '/clubs': typeof ClubsRoute
   '/coaches': typeof CoachesRoute
+  '/cricket': typeof CricketRoute
   '/guardians': typeof GuardiansRoute
+  '/hockey': typeof HockeyRoute
+  '/netball': typeof NetballRoute
+  '/rugby': typeof RugbyRoute
   '/schools': typeof SchoolsRoute
+  '/sports': typeof SportsRoute
+  '/swimming': typeof SwimmingRoute
   '/umpires': typeof UmpiresRoute
 }
 export interface FileRouteTypes {
@@ -86,38 +149,66 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/athletes'
+    | '/athletics'
     | '/clubs'
     | '/coaches'
+    | '/cricket'
     | '/guardians'
+    | '/hockey'
+    | '/netball'
+    | '/rugby'
     | '/schools'
+    | '/sports'
+    | '/swimming'
     | '/umpires'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/athletes'
+    | '/athletics'
     | '/clubs'
     | '/coaches'
+    | '/cricket'
     | '/guardians'
+    | '/hockey'
+    | '/netball'
+    | '/rugby'
     | '/schools'
+    | '/sports'
+    | '/swimming'
     | '/umpires'
   id:
     | '__root__'
     | '/'
     | '/athletes'
+    | '/athletics'
     | '/clubs'
     | '/coaches'
+    | '/cricket'
     | '/guardians'
+    | '/hockey'
+    | '/netball'
+    | '/rugby'
     | '/schools'
+    | '/sports'
+    | '/swimming'
     | '/umpires'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AthletesRoute: typeof AthletesRoute
+  AthleticsRoute: typeof AthleticsRoute
   ClubsRoute: typeof ClubsRoute
   CoachesRoute: typeof CoachesRoute
+  CricketRoute: typeof CricketRoute
   GuardiansRoute: typeof GuardiansRoute
+  HockeyRoute: typeof HockeyRoute
+  NetballRoute: typeof NetballRoute
+  RugbyRoute: typeof RugbyRoute
   SchoolsRoute: typeof SchoolsRoute
+  SportsRoute: typeof SportsRoute
+  SwimmingRoute: typeof SwimmingRoute
   UmpiresRoute: typeof UmpiresRoute
 }
 
@@ -130,6 +221,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UmpiresRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/swimming': {
+      id: '/swimming'
+      path: '/swimming'
+      fullPath: '/swimming'
+      preLoaderRoute: typeof SwimmingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sports': {
+      id: '/sports'
+      path: '/sports'
+      fullPath: '/sports'
+      preLoaderRoute: typeof SportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/schools': {
       id: '/schools'
       path: '/schools'
@@ -137,11 +242,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SchoolsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rugby': {
+      id: '/rugby'
+      path: '/rugby'
+      fullPath: '/rugby'
+      preLoaderRoute: typeof RugbyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netball': {
+      id: '/netball'
+      path: '/netball'
+      fullPath: '/netball'
+      preLoaderRoute: typeof NetballRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hockey': {
+      id: '/hockey'
+      path: '/hockey'
+      fullPath: '/hockey'
+      preLoaderRoute: typeof HockeyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/guardians': {
       id: '/guardians'
       path: '/guardians'
       fullPath: '/guardians'
       preLoaderRoute: typeof GuardiansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cricket': {
+      id: '/cricket'
+      path: '/cricket'
+      fullPath: '/cricket'
+      preLoaderRoute: typeof CricketRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/coaches': {
@@ -156,6 +289,13 @@ declare module '@tanstack/react-router' {
       path: '/clubs'
       fullPath: '/clubs'
       preLoaderRoute: typeof ClubsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/athletics': {
+      id: '/athletics'
+      path: '/athletics'
+      fullPath: '/athletics'
+      preLoaderRoute: typeof AthleticsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/athletes': {
@@ -178,10 +318,17 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AthletesRoute: AthletesRoute,
+  AthleticsRoute: AthleticsRoute,
   ClubsRoute: ClubsRoute,
   CoachesRoute: CoachesRoute,
+  CricketRoute: CricketRoute,
   GuardiansRoute: GuardiansRoute,
+  HockeyRoute: HockeyRoute,
+  NetballRoute: NetballRoute,
+  RugbyRoute: RugbyRoute,
   SchoolsRoute: SchoolsRoute,
+  SportsRoute: SportsRoute,
+  SwimmingRoute: SwimmingRoute,
   UmpiresRoute: UmpiresRoute,
 }
 export const routeTree = rootRouteImport

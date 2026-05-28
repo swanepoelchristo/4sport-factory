@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Flag, DollarSign, Calendar, MapPin, Star, Bell, Shield, CheckCircle2 } from "lucide-react";
+import { Flag, DollarSign, Calendar, MapPin, Star, Bell, Shield, CheckCircle2, Eye, ShieldCheck, ClipboardCheck } from "lucide-react";
 import { PersonaPage } from "@/components/site/PersonaPage";
 import watermark from "@/assets/persona-umpires.jpg";
 
@@ -24,10 +24,16 @@ export const Route = createFileRoute("/umpires")({
         primaryCta: "Sign up as an umpire",
         secondaryCta: "How it works",
         watermark,
+        focusLine: "Every match, every venue, every payment — tracked. Officials focus on the game, not the admin around it.",
         video: {
           heading: "See the umpire flow in action",
           description: "A short walkthrough will show how umpires manage availability, accept matches, and track bookings.",
         },
+        pillars: [
+          { icon: Eye, title: "Clear match visibility", body: "Every fixture you've accepted — with venue, time and contact — in one feed." },
+          { icon: ShieldCheck, title: "Verified & accredited", body: "Your levels and certifications stored once, trusted everywhere you officiate." },
+          { icon: ClipboardCheck, title: "Tracked payments", body: "Every match logged, every payment trackable — no chasing schools or clubs." },
+        ],
         pains: [
           { icon: Bell, title: "Last-minute calls", body: "No more 9pm phone calls trying to fill a Saturday morning slot." },
           { icon: Calendar, title: "Calendar conflicts", body: "Set when you're available — and only get matches that fit." },

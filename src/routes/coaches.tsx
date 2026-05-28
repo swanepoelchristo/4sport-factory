@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ClipboardList, Users, MessageSquare, Calendar, BarChart3, Bell, Target, Zap } from "lucide-react";
+import { ClipboardList, Users, MessageSquare, Calendar, BarChart3, Bell, Target, Zap, Eye, ShieldCheck, ClipboardCheck } from "lucide-react";
 import { PersonaPage } from "@/components/site/PersonaPage";
 import watermark from "@/assets/persona-coaches.jpg";
 
@@ -24,10 +24,16 @@ export const Route = createFileRoute("/coaches")({
         primaryCta: "Get started as a coach",
         secondaryCta: "See coach features",
         watermark,
+        focusLine: "Squads, fixtures, comms and notes — all tracked for you. So coaches can focus on coaching, not admin.",
         video: {
           heading: "See the coach flow in action",
           description: "A short walkthrough will show how coaches build squads, manage fixtures, send updates, and track match-day work.",
         },
+        pillars: [
+          { icon: Eye, title: "Visibility across your squad", body: "Availability, attendance and development — visible at a glance, not buried in messages." },
+          { icon: ShieldCheck, title: "Safe communication", body: "Reach players and parents through verified channels, not personal phone numbers." },
+          { icon: ClipboardCheck, title: "Everything tracked", body: "Session plans, notes and squad decisions logged automatically for the season." },
+        ],
         pains: [
           { icon: MessageSquare, title: "Lost in group chats", body: "Updates buried in noise. No one knows the latest plan." },
           { icon: ClipboardList, title: "Manual squad lists", body: "Copy-pasting names every week instead of coaching." },

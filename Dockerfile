@@ -1,4 +1,4 @@
-FROM node:20-alpine AS build
+FROM node:20-alpine
 WORKDIR /app
 
 COPY package*.json ./
@@ -7,12 +7,5 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM node:20-alpine
-WORKDIR /app
-
-COPY --from=build /app/dist ./dist
-COPY package*.json ./
-RUN npm ci --omit=dev
-
-EXPOSE 3000
-CMD ["node", "dist/server/index.js"]
+EXPOSE 8787
+CMD ["npx", "wrangler", "dev", "dist/server/index.js", "--ip", "0.0.0.0", "--port", "8787", "--local"]

@@ -1,7 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, GraduationCap, ClipboardList, Trophy, Flag, Users, Shield } from "lucide-react";
+import {
+  ArrowRight,
+  GraduationCap,
+  ClipboardList,
+  Trophy,
+  Flag,
+  Users,
+  Shield,
+} from "lucide-react";
 import { Logo } from "@/components/site/Logo";
-import { buildMailto } from "@/lib/mailto";
 import schoolImg from "@/assets/persona-schools.jpg";
 import coachImg from "@/assets/persona-coaches.jpg";
 import clubImg from "@/assets/persona-clubs.jpg";
@@ -13,21 +20,64 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "4SPORT — Eyes on the game" },
-      { name: "description", content: "One platform for schools, coaches, clubs, athletes, umpires and guardians. Trackability, safety and visibility — so everyone can focus on sport, not admin." },
+      {
+        name: "description",
+        content:
+          "One platform for schools, coaches, clubs, athletes, umpires and guardians. Trackability, safety and visibility — so everyone can focus on sport, not admin.",
+      },
       { property: "og:title", content: "4SPORT — Eyes on the game" },
-      { property: "og:description", content: "Trackability, safety and visibility for school and club sport." },
+      {
+        property: "og:description",
+        content: "Trackability, safety and visibility for school and club sport.",
+      },
     ],
   }),
   component: Index,
 });
 
 const personas = [
-  { to: "/schools" as const, label: "School", icon: GraduationCap, image: schoolImg, blurb: "Run fixtures, venues, teams and reporting from one command center." },
-  { to: "/coaches" as const, label: "Coach", icon: ClipboardList, image: coachImg, blurb: "Plan sessions, track squads and message players in seconds." },
-  { to: "/clubs" as const, label: "Club", icon: Shield, image: clubImg, blurb: "Coordinate teams, fixtures, officials and members across your whole club." },
-  { to: "/athletes" as const, label: "Athlete", icon: Trophy, image: athleteImg, blurb: "Your fixtures, your stats, your team — all in your pocket." },
-  { to: "/umpires" as const, label: "Umpire", icon: Flag, image: umpireImg, blurb: "Accept matches, get paid, manage your availability with zero admin." },
-  { to: "/guardians" as const, label: "Guardian", icon: Users, image: guardianImg, blurb: "Know what's on, where it is and how it ended — without chasing." },
+  {
+    to: "/schools" as const,
+    label: "School",
+    icon: GraduationCap,
+    image: schoolImg,
+    blurb: "Run fixtures, venues, teams and reporting from one command center.",
+  },
+  {
+    to: "/coaches" as const,
+    label: "Coach",
+    icon: ClipboardList,
+    image: coachImg,
+    blurb: "Plan sessions, track squads and message players in seconds.",
+  },
+  {
+    to: "/clubs" as const,
+    label: "Club",
+    icon: Shield,
+    image: clubImg,
+    blurb: "Coordinate teams, fixtures, officials and members across your whole club.",
+  },
+  {
+    to: "/athletes" as const,
+    label: "Athlete",
+    icon: Trophy,
+    image: athleteImg,
+    blurb: "Your fixtures, your stats, your team — all in your pocket.",
+  },
+  {
+    to: "/umpires" as const,
+    label: "Umpire",
+    icon: Flag,
+    image: umpireImg,
+    blurb: "Accept matches, get paid, manage your availability with zero admin.",
+  },
+  {
+    to: "/guardians" as const,
+    label: "Guardian",
+    icon: Users,
+    image: guardianImg,
+    blurb: "Know what's on, where it is and how it ended — without chasing.",
+  },
 ];
 
 function Index() {
@@ -41,31 +91,38 @@ function Index() {
             <span className="h-1.5 w-1.5 rounded-full bg-brand shadow-glow" />
             Eyes on the game.
           </div>
+
           <div className="flex justify-center mb-10">
             <div className="rounded-2xl bg-white shadow-glow ring-1 ring-brand/30 p-5 sm:p-7">
               <Logo variant="card" className="h-24 sm:h-32 w-auto" />
             </div>
           </div>
+
           <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-8xl text-foreground leading-[0.95] tracking-tight max-w-5xl mx-auto">
-            Focus on sport. <span className="text-gradient-brand">Not admin.</span>
+            Focus on sport.{" "}
+            <span className="text-gradient-brand">Not admin.</span>
           </h1>
+
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            4SPORT brings schools, coaches, clubs, athletes, umpires and guardians onto one platform —
-            with the trackability, safety and visibility that real sport needs.
+            4SPORT brings schools, coaches, clubs, athletes, umpires and
+            guardians onto one platform — with the trackability, safety and
+            visibility that real sport needs.
           </p>
+
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <a
-              href={buildMailto("demo", "General")}
+            <Link
+              to="/schools"
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand text-brand-foreground px-6 py-3.5 text-sm font-semibold shadow-glow hover:opacity-90 transition"
             >
               Book a demo <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href={buildMailto("sales", "General")}
+            </Link>
+
+            <Link
+              to="/clubs"
               className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-white/10 transition"
             >
               Talk to sales
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -73,9 +130,14 @@ function Index() {
       {/* PERSONA CARDS */}
       <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
         <div className="text-center mb-10">
-          <p className="text-brand text-sm font-semibold uppercase tracking-wider mb-3">Pick your path</p>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground">Who are you here as?</h2>
+          <p className="text-brand text-sm font-semibold uppercase tracking-wider mb-3">
+            Pick your path
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground">
+            Who are you here as?
+          </h2>
         </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {personas.map((p) => (
             <Link
@@ -95,14 +157,19 @@ function Index() {
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                 <div className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-full px-3 py-1.5">
                   <p.icon className="h-3.5 w-3.5 text-brand" />
-                  <span className="text-xs font-semibold text-foreground uppercase tracking-wider">{p.label}</span>
+                  <span className="text-xs font-semibold text-foreground uppercase tracking-wider">
+                    {p.label}
+                  </span>
                 </div>
               </div>
+
               <div className="p-6">
                 <h3 className="text-2xl font-display font-bold text-foreground mb-2">
                   4SPORT for {p.label}s
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5">{p.blurb}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                  {p.blurb}
+                </p>
                 <div className="inline-flex items-center gap-2 text-brand font-semibold text-sm group-hover:gap-3 transition-all">
                   Enter as {p.label}
                   <ArrowRight className="h-4 w-4" />
@@ -118,15 +185,19 @@ function Index() {
         <div className="rounded-3xl bg-gradient-surface border border-border shadow-card p-8 sm:p-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <p className="text-brand text-sm font-semibold uppercase tracking-wider mb-3">One platform</p>
+              <p className="text-brand text-sm font-semibold uppercase tracking-wider mb-3">
+                One platform
+              </p>
               <h2 className="text-4xl sm:text-5xl font-display font-bold text-foreground mb-5">
                 Built for the people who actually run school sport.
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                No more spreadsheets, no more group chats, no more chasing umpires the night before.
-                4SPORT brings everyone — and everything — onto the same page.
+                No more spreadsheets, no more group chats, no more chasing
+                umpires the night before. 4SPORT brings everyone — and
+                everything — onto the same page.
               </p>
             </div>
+
             <ul className="space-y-3">
               {[
                 "Real-time fixtures and venues",

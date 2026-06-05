@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
-import { buildMailto } from "@/lib/mailto";
 
 const links = [
   { to: "/schools", label: "Schools" },
@@ -31,7 +30,10 @@ export function SiteNav() {
                 key={l.to}
                 to={l.to}
                 className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
-                activeProps={{ className: "px-3 py-2 rounded-md text-sm font-semibold text-foreground bg-white/5" }}
+                activeProps={{
+                  className:
+                    "px-3 py-2 rounded-md text-sm font-semibold text-foreground bg-white/5",
+                }}
               >
                 {l.label}
               </Link>
@@ -39,18 +41,19 @@ export function SiteNav() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
-            <a
-              href={buildMailto("demo", "General")}
+            <Link
+              to="/contact"
               className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               Book demo
-            </a>
-            <a
-              href={buildMailto("sales", "General")}
+            </Link>
+
+            <Link
+              to="/contact"
               className="px-4 py-2 rounded-lg bg-gradient-brand text-brand-foreground text-sm font-semibold shadow-glow hover:opacity-90 transition-opacity"
             >
               Get started
-            </a>
+            </Link>
           </div>
 
           <button
@@ -70,14 +73,31 @@ export function SiteNav() {
                 to={l.to}
                 onClick={() => setOpen(false)}
                 className="block px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/5"
-                activeProps={{ className: "block px-3 py-2 rounded-md text-sm font-semibold text-foreground bg-white/5" }}
+                activeProps={{
+                  className:
+                    "block px-3 py-2 rounded-md text-sm font-semibold text-foreground bg-white/5",
+                }}
               >
                 {l.label}
               </Link>
             ))}
+
             <div className="pt-2 flex gap-2">
-              <a href={buildMailto("demo", "General")} className="flex-1 text-center px-4 py-2 rounded-lg border border-border text-sm font-medium">Book demo</a>
-              <a href={buildMailto("sales", "General")} className="flex-1 text-center px-4 py-2 rounded-lg bg-gradient-brand text-brand-foreground text-sm font-semibold">Get started</a>
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className="flex-1 text-center px-4 py-2 rounded-lg border border-border text-sm font-medium"
+              >
+                Book demo
+              </Link>
+
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className="flex-1 text-center px-4 py-2 rounded-lg bg-gradient-brand text-brand-foreground text-sm font-semibold"
+              >
+                Get started
+              </Link>
             </div>
           </div>
         )}

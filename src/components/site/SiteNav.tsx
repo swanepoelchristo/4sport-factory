@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
+import { buildMailto } from "@/lib/mailto";
 
 const links = [
   { to: "/schools", label: "Schools" },
@@ -41,19 +42,19 @@ export function SiteNav() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
-            <Link
-              to="/contact"
+            <a
+              href={buildMailto("demo", "General")}
               className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               Book demo
-            </Link>
+            </a>
 
-            <Link
-              to="/contact"
+            <a
+              href={buildMailto("sales", "General")}
               className="px-4 py-2 rounded-lg bg-gradient-brand text-brand-foreground text-sm font-semibold shadow-glow hover:opacity-90 transition-opacity"
             >
               Get started
-            </Link>
+            </a>
           </div>
 
           <button
@@ -83,21 +84,21 @@ export function SiteNav() {
             ))}
 
             <div className="pt-2 flex gap-2">
-              <Link
-                to="/contact"
+              <a
+                href={buildMailto("demo", "General")}
                 onClick={() => setOpen(false)}
                 className="flex-1 text-center px-4 py-2 rounded-lg border border-border text-sm font-medium"
               >
                 Book demo
-              </Link>
+              </a>
 
-              <Link
-                to="/contact"
+              <a
+                href={buildMailto("sales", "General")}
                 onClick={() => setOpen(false)}
                 className="flex-1 text-center px-4 py-2 rounded-lg bg-gradient-brand text-brand-foreground text-sm font-semibold"
               >
                 Get started
-              </Link>
+              </a>
             </div>
           </div>
         )}

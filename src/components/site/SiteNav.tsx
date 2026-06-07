@@ -12,6 +12,7 @@ const links = [
   { to: "/umpires", label: "Umpires" },
   { to: "/guardians", label: "Guardians" },
   { to: "/sports", label: "Sports" },
+  { to: "/about", label: "About" },
 ] as const;
 
 export function SiteNav() {

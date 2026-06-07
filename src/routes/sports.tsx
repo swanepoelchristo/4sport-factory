@@ -3,6 +3,7 @@ import { ArrowRight, Eye, ShieldCheck } from "lucide-react";
 import { Logo } from "@/components/site/Logo";
 import { ContactStrip } from "@/components/site/ContactStrip";
 import rugby from "@/assets/sport-rugby.jpg";
+import soccer from "@/assets/sport-soccer.jpg";
 import hockey from "@/assets/sport-hockey.jpg";
 import cricket from "@/assets/sport-cricket.jpg";
 import athletics from "@/assets/sport-athletics.jpg";
@@ -11,13 +12,21 @@ import swimming from "@/assets/sport-swimming.jpg";
 
 type SportCard = {
   name: string;
-  to?: "/rugby" | "/hockey" | "/cricket" | "/athletics" | "/netball" | "/swimming";
+  to?:
+    | "/rugby"
+    | "/soccer"
+    | "/hockey"
+    | "/cricket"
+    | "/athletics"
+    | "/netball"
+    | "/swimming";
   image?: string;
   tagline?: string;
 };
 
 const liveSports: SportCard[] = [
   { name: "Rugby", to: "/rugby", image: rugby, tagline: "Eyes on every away game." },
+  { name: "Soccer", to: "/soccer", image: soccer, tagline: "Every fixture. Every player. Every pitch." },
   { name: "Hockey", to: "/hockey", image: hockey, tagline: "Tournament-grade coordination." },
   { name: "Cricket", to: "/cricket", image: cricket, tagline: "From nets to national tours." },
   { name: "Athletics", to: "/athletics", image: athletics, tagline: "Every athlete. Every event." },
@@ -26,7 +35,6 @@ const liveSports: SportCard[] = [
 ];
 
 const upcomingSports = [
-  "Soccer",
   "Tennis",
   "Water Polo",
   "Basketball",
@@ -50,7 +58,11 @@ export const Route = createFileRoute("/sports")({
   head: () => ({
     meta: [
       { title: "Sports we power — 4SPORT" },
-      { name: "description", content: "Every sport in the 4SPORT ecosystem — from rugby and cricket to swimming and athletics." },
+      {
+        name: "description",
+        content:
+          "Every sport in the 4SPORT ecosystem — from rugby and soccer to cricket, swimming and athletics.",
+      },
       { property: "og:title", content: "Sports we power — 4SPORT" },
       { property: "og:description", content: "One platform. Every sport. Eyes on the game." },
     ],
@@ -61,7 +73,6 @@ export const Route = createFileRoute("/sports")({
 function SportsPage() {
   return (
     <main className="relative">
-      {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-40" aria-hidden />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" aria-hidden />
@@ -87,14 +98,16 @@ function SportsPage() {
         </div>
       </section>
 
-      {/* LIVE SPORTS GRID */}
       <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-2xl mb-10">
-          <p className="text-brand text-sm font-semibold uppercase tracking-wider mb-3">Live sport pages</p>
+          <p className="text-brand text-sm font-semibold uppercase tracking-wider mb-3">
+            Live sport pages
+          </p>
           <h2 className="text-4xl sm:text-5xl font-display font-bold text-foreground">
             Sport-specific. Built for the real season.
           </h2>
         </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {liveSports.map((s) => (
             <Link
@@ -113,6 +126,7 @@ function SportsPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" aria-hidden />
               </div>
+
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <div className="flex items-end justify-between gap-3">
                   <div>
@@ -129,11 +143,12 @@ function SportsPage() {
         </div>
       </section>
 
-      {/* COMING SOON */}
       <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="rounded-3xl bg-gradient-surface border border-border p-8 sm:p-12 shadow-card">
           <div className="max-w-2xl mb-8">
-            <p className="text-brand text-sm font-semibold uppercase tracking-wider mb-3">More sports — coming soon</p>
+            <p className="text-brand text-sm font-semibold uppercase tracking-wider mb-3">
+              More sports — coming soon
+            </p>
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground">
               The 4SPORT ecosystem is growing.
             </h2>
@@ -141,6 +156,7 @@ function SportsPage() {
               These sports already live inside the 4SPORT operational platform — dedicated story pages are on the way.
             </p>
           </div>
+
           <div className="flex flex-wrap gap-2">
             {upcomingSports.map((name) => (
               <span

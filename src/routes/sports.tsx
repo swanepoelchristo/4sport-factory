@@ -3,7 +3,7 @@ import { ArrowRight, Eye, ShieldCheck } from "lucide-react";
 import { Logo } from "@/components/site/Logo";
 import { ContactStrip } from "@/components/site/ContactStrip";
 import rugby from "@/assets/sport-rugby.jpg";
-import soccer from "@/assets/sport-soccer.jpg";
+import soccer from "@/assets/sport-soccer.png";
 import hockey from "@/assets/sport-hockey.jpg";
 import cricket from "@/assets/sport-cricket.jpg";
 import athletics from "@/assets/sport-athletics.jpg";

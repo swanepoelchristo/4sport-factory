@@ -14,7 +14,7 @@ import {
   Trophy,
 } from "lucide-react";
 import { PersonaPage } from "@/components/site/PersonaPage";
-import watermark from "@/assets/sport-soccer.jpg";
+import watermark from "@/assets/sport-soccer.png";
 
 export const Route = createFileRoute("/soccer")({
   head: () => ({

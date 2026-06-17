@@ -55,10 +55,13 @@ export function SiteFooter() {
             </span>
           </p>
 
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Link to="/about" className="hover:text-foreground">About</Link>
             <Link to="/pricing" className="hover:text-foreground">Pricing</Link>
             <Link to="/contact" className="hover:text-foreground">Contact</Link>
+            <Link to="/terms-and-conditions" className="hover:text-foreground">Terms</Link>
+            <Link to="/privacy-policy" className="hover:text-foreground">Privacy</Link>
+            <Link to="/refund-cancellation-policy" className="hover:text-foreground">Refunds</Link>
           </div>
         </div>
       </div>

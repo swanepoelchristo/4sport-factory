@@ -2,7 +2,8 @@ import { ArrowRight, Check, Eye, ShieldCheck, type LucideIcon } from "lucide-rea
 import { Logo } from "./Logo";
 import { PersonaVideoSection, type PersonaVideo } from "./PersonaVideoSection";
 import { ContactStrip } from "./ContactStrip";
-import { buildMailto, ctaKind } from "@/lib/mailto";
+import { MarketingEnquiryForm } from "./MarketingEnquiryForm";
+import { buildMailto } from "@/lib/mailto";
 
 export type PersonaConfig = {
   persona: string;
@@ -21,7 +22,7 @@ export type PersonaConfig = {
 };
 
 export function PersonaPage({ config }: { config: PersonaConfig }) {
-  const primaryHref = buildMailto(ctaKind(config.primaryCta), config.persona);
+  const primaryHref = "#enquiry";
   return (
     <main className="relative">
       {/* HERO */}
@@ -181,24 +182,26 @@ export function PersonaPage({ config }: { config: PersonaConfig }) {
       </section>
 
       {/* CTA */}
-      <section id="get-started" className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <section id="enquiry" className="relative mx-auto max-w-7xl scroll-mt-8 px-4 sm:px-6 lg:px-8 py-20">
         <div className="relative overflow-hidden rounded-3xl border border-border shadow-card">
           <img src={config.watermark} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/80 to-background/95" aria-hidden />
           <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
-          <div className="relative p-10 sm:p-16 text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl font-display font-black text-foreground mb-4">
-              Ready to run {config.persona.toLowerCase()}-grade sport?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Join the 4SPORT ecosystem and connect every part of your sporting program.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <a href={primaryHref} className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand text-brand-foreground px-6 py-3.5 text-sm font-semibold shadow-glow hover:opacity-90 transition">
-                {config.primaryCta} <ArrowRight className="h-4 w-4" />
-              </a>
+          <div className="relative p-8 sm:p-12 lg:p-16 text-center">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="text-4xl sm:text-5xl font-display font-black text-foreground mb-4">
+                Ready to run {config.persona.toLowerCase()}-grade sport?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Send us your details and the 4SPORT team can show you the right flow for your organisation.
+              </p>
+            </div>
+
+            <MarketingEnquiryForm persona={config.persona} />
+
+            <div className="mt-6 flex justify-center">
               <a href={buildMailto("support", config.persona)} className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-white/10 transition">
-                <Check className="h-4 w-4" /> Talk to us
+                <Check className="h-4 w-4" /> Prefer email? Talk to us
               </a>
             </div>
           </div>
